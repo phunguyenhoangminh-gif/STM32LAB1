@@ -92,7 +92,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   static int state = 0;
-  static int counter = 500;
+  static int counter = 300;
   while (1)
   {
 	  switch(state) {
@@ -129,7 +129,7 @@ int main(void)
 	  		  HAL_GPIO_WritePin(GPIOA, LED_W_YEL_Pin | LED_W_GRN_Pin, GPIO_PIN_SET);
 
 	  		  if (counter <= 0) {
-	  			  counter = 500;
+	  			  counter = 300;
 	  		      state = 2;
 	  		  }
 	  		  break;
@@ -165,7 +165,7 @@ int main(void)
 	  		  HAL_GPIO_WritePin(GPIOA, LED_W_GRN_Pin | LED_W_RED_Pin, GPIO_PIN_SET);
 
 	  		  if (counter <= 0) {
-	  			  counter = 500;
+	  			  counter = 300;
 	  		      state = 0;
 	  		  }
 	  		  break;

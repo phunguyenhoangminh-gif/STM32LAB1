@@ -108,7 +108,7 @@ int main(void)
  8000158:	f000 f940 	bl	80003dc <MX_GPIO_Init>
   /* USER CODE BEGIN WHILE */
   static int state = 0;
-  static int counter = 500;
+  static int counter = 300;
   while (1)
   {
 	  switch(state) {
@@ -234,9 +234,9 @@ int main(void)
  8000242:	681b      	ldr	r3, [r3, #0]
  8000244:	2b00      	cmp	r3, #0
  8000246:	dc78      	bgt.n	800033a <main+0x1ee>
-	  			  counter = 500;
+	  			  counter = 300;
  8000248:	4b45      	ldr	r3, [pc, #276]	; (8000360 <main+0x214>)
- 800024a:	f44f 72fa 	mov.w	r2, #500	; 0x1f4
+ 800024a:	f44f 7296 	mov.w	r2, #300	; 0x12c
  800024e:	601a      	str	r2, [r3, #0]
 	  		      state = 2;
  8000250:	4b41      	ldr	r3, [pc, #260]	; (8000358 <main+0x20c>)
@@ -356,9 +356,9 @@ int main(void)
  8000320:	681b      	ldr	r3, [r3, #0]
  8000322:	2b00      	cmp	r3, #0
  8000324:	dc0d      	bgt.n	8000342 <main+0x1f6>
-	  			  counter = 500;
+	  			  counter = 300;
  8000326:	4b0e      	ldr	r3, [pc, #56]	; (8000360 <main+0x214>)
- 8000328:	f44f 72fa 	mov.w	r2, #500	; 0x1f4
+ 8000328:	f44f 7296 	mov.w	r2, #300	; 0x12c
  800032c:	601a      	str	r2, [r3, #0]
 	  		      state = 0;
  800032e:	4b0a      	ldr	r3, [pc, #40]	; (8000358 <main+0x20c>)
