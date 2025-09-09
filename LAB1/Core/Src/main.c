@@ -91,8 +91,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  static int state = 0;
-  static int counter = 300;
+  int state = 0;
+  int counter = 300;
   while (1)
   {
 	  switch(state) {
