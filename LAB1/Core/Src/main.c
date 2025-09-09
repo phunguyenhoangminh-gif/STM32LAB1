@@ -49,7 +49,7 @@
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
-
+void clearAllClock(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -94,9 +94,7 @@ int main(void)
   while (1)
   {
 	  for (int i = 0; i < 12; i++) {
-	      HAL_GPIO_WritePin(GPIOA, LED_12_Pin | LED_1_Pin | LED_2_Pin | LED_3_Pin |
-	                        LED_4_Pin | LED_5_Pin | LED_6_Pin | LED_7_Pin |
-	                        LED_8_Pin | LED_9_Pin | LED_10_Pin | LED_11_Pin, GPIO_PIN_SET);
+	      clearAllClock();
 
 	      switch (i) {
 	      	  case 0: HAL_GPIO_WritePin(GPIOA, LED_12_Pin, GPIO_PIN_RESET); break;
@@ -188,7 +186,11 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void clearAllClock(void) {
+    HAL_GPIO_WritePin(GPIOA, LED_12_Pin | LED_1_Pin | LED_2_Pin | LED_3_Pin |
+                             LED_4_Pin | LED_5_Pin | LED_6_Pin | LED_7_Pin |
+                             LED_8_Pin | LED_9_Pin | LED_10_Pin | LED_11_Pin, GPIO_PIN_SET);
+}
 /* USER CODE END 4 */
 
 /**
