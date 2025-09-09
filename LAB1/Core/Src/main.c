@@ -90,8 +90,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  static int state = 0; // 0: RED, 1: YELLOW, 2: GREEN
-  static int counter = 500; // 500 * 10ms = 5s
+  int state = 0; // 0: RED, 1: YELLOW, 2: GREEN
+  int counter = 500; // 500 * 10ms = 5s
   while (1)
   {
 	  switch (state) {
