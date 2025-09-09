@@ -91,10 +91,10 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  static int state = 0;
-  static int counter = 300;
-  static int counter_7seg = 100;
-  static int number = 0;
+  int state = 0;
+  int counter = 300;
+  int counter_7seg = 100;
+  int number = 0;
   while (1)
   {
 	  switch(state) {
