@@ -91,8 +91,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  static int state = 0; //0: LED_RED OFF, LED_YELLOW ON; 1: LED_RED ON, LED_YELLOW OFF
-  static int counter = 200; //200 * 10ms = 2s
+  int state = 0; //0: LED_RED OFF, LED_YELLOW ON; 1: LED_RED ON, LED_YELLOW OFF
+  int counter = 200; //200 * 10ms = 2s
   while (1)
   {
 	  counter--;
