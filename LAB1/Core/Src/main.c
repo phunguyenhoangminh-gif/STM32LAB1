@@ -103,7 +103,6 @@ int main(void)
 	  setNumberOnClock(hour % 12);
 	  setNumberOnClock((minute / 5) % 12);
 	  setNumberOnClock((second / 5) % 12);
-	  HAL_Delay(5000);
 
 	  second += 5;
 	  if (second >= 60) {
@@ -115,6 +114,7 @@ int main(void)
 	          if (hour >= 24) hour = 0;
 	      }
 	   }
+	  HAL_Delay(5000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
