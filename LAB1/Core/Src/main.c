@@ -91,93 +91,72 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int counter = 0;
   while (1)
   {
-	  // NS XANH 3s  —  EW ĐỎ (Bắt đầu 5s)
-	  HAL_GPIO_WritePin(LED_N_RED_GPIO_Port,    LED_N_RED_Pin,	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_N_YEL_GPIO_Port, 	LED_N_YEL_Pin,	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_N_GRN_GPIO_Port,  	LED_N_GRN_Pin,  GPIO_PIN_RESET);
+	  if (counter >= 0 && counter <= 2) {
+		  HAL_GPIO_WritePin(LED_N_RED_GPIO_Port, LED_N_RED_Pin,	GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_N_YEL_GPIO_Port, LED_N_YEL_Pin,	GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_N_GRN_GPIO_Port, LED_N_GRN_Pin, GPIO_PIN_RESET);
 
-	  HAL_GPIO_WritePin(LED_S_RED_GPIO_Port,    LED_S_RED_Pin,	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_S_YEL_GPIO_Port, 	LED_S_YEL_Pin, 	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_S_GRN_GPIO_Port,  	LED_S_GRN_Pin,  GPIO_PIN_RESET);
+		  HAL_GPIO_WritePin(LED_S_RED_GPIO_Port, LED_S_RED_Pin, GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_S_YEL_GPIO_Port, LED_S_YEL_Pin, GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_S_GRN_GPIO_Port, LED_S_GRN_Pin, GPIO_PIN_RESET);
 
-	  HAL_GPIO_WritePin(LED_E_RED_GPIO_Port,    LED_E_RED_Pin,	GPIO_PIN_RESET);
-	  HAL_GPIO_WritePin(LED_E_YEL_GPIO_Port, 	LED_E_YEL_Pin, 	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_E_GRN_GPIO_Port,  	LED_E_GRN_Pin,  GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_E_RED_GPIO_Port, LED_E_RED_Pin,	GPIO_PIN_RESET);
+		  HAL_GPIO_WritePin(LED_E_YEL_GPIO_Port, LED_E_YEL_Pin, GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_E_GRN_GPIO_Port, LED_E_GRN_Pin, GPIO_PIN_SET);
 
-	  HAL_GPIO_WritePin(LED_W_RED_GPIO_Port,    LED_W_RED_Pin,	GPIO_PIN_RESET);
-	  HAL_GPIO_WritePin(LED_W_YEL_GPIO_Port, 	LED_W_YEL_Pin, 	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_W_GRN_GPIO_Port,  	LED_W_GRN_Pin,  GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_W_RED_GPIO_Port, LED_W_RED_Pin,	GPIO_PIN_RESET);
+		  HAL_GPIO_WritePin(LED_W_YEL_GPIO_Port, LED_W_YEL_Pin, GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_W_GRN_GPIO_Port, LED_W_GRN_Pin, GPIO_PIN_SET);
 
-	  for (int t = 3; t >= 1; t--) {
-	      display7SEG(t);
-	      HAL_Delay(1000);
+		  display7SEG(3 - counter);
 	  }
+	  else if (counter >= 3 && counter <= 4) {
+		  HAL_GPIO_WritePin(LED_N_RED_GPIO_Port, LED_N_RED_Pin,	GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_N_YEL_GPIO_Port, LED_N_YEL_Pin, GPIO_PIN_RESET);
+		  HAL_GPIO_WritePin(LED_N_GRN_GPIO_Port, LED_N_GRN_Pin, GPIO_PIN_SET);
 
-	  // NS VÀNG 2s — EW vẫn ĐỎ
-	  HAL_GPIO_WritePin(LED_N_RED_GPIO_Port,    LED_N_RED_Pin,	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_N_GRN_GPIO_Port,  	LED_N_GRN_Pin,  GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_N_YEL_GPIO_Port, 	LED_N_YEL_Pin, 	GPIO_PIN_RESET);
+		  HAL_GPIO_WritePin(LED_S_RED_GPIO_Port, LED_S_RED_Pin,	GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_S_YEL_GPIO_Port, LED_S_YEL_Pin, GPIO_PIN_RESET);
+		  HAL_GPIO_WritePin(LED_S_GRN_GPIO_Port, LED_S_GRN_Pin,	GPIO_PIN_SET);
 
-	  HAL_GPIO_WritePin(LED_S_RED_GPIO_Port,    LED_S_RED_Pin,	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_S_GRN_GPIO_Port,  	LED_S_GRN_Pin,	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_S_YEL_GPIO_Port, 	LED_S_YEL_Pin, 	GPIO_PIN_RESET);
-
-	  HAL_GPIO_WritePin(LED_E_RED_GPIO_Port,    LED_E_RED_Pin,	GPIO_PIN_RESET);
-	  HAL_GPIO_WritePin(LED_E_YEL_GPIO_Port, 	LED_E_YEL_Pin, 	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_E_GRN_GPIO_Port,  	LED_E_GRN_Pin,  GPIO_PIN_SET);
-
-	  HAL_GPIO_WritePin(LED_W_RED_GPIO_Port,    LED_W_RED_Pin,	GPIO_PIN_RESET);
-	  HAL_GPIO_WritePin(LED_W_YEL_GPIO_Port, 	LED_W_YEL_Pin, 	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_W_GRN_GPIO_Port,  	LED_W_GRN_Pin,  GPIO_PIN_SET);
-
-	  for (int t = 2; t >= 1; t--) {
-	      display7SEG(t);
-	      HAL_Delay(1000);
+		  display7SEG(5 - counter);
 	  }
+	  else if (counter >= 5 && counter <= 7) {
+		  HAL_GPIO_WritePin(LED_N_RED_GPIO_Port, LED_N_RED_Pin,	GPIO_PIN_RESET);
+		  HAL_GPIO_WritePin(LED_N_YEL_GPIO_Port, LED_N_YEL_Pin, GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_N_GRN_GPIO_Port, LED_N_GRN_Pin, GPIO_PIN_SET);
 
-	  HAL_GPIO_WritePin(LED_N_YEL_GPIO_Port, 	LED_N_YEL_Pin, GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_S_YEL_GPIO_Port, 	LED_S_YEL_Pin, GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_S_RED_GPIO_Port, LED_S_RED_Pin,	GPIO_PIN_RESET);
+		  HAL_GPIO_WritePin(LED_S_YEL_GPIO_Port, LED_S_YEL_Pin, GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_S_GRN_GPIO_Port, LED_S_GRN_Pin, GPIO_PIN_SET);
 
-	  // NS ĐỎ (bắt đầu 5s) — EW XANH 3s
-	  HAL_GPIO_WritePin(LED_N_RED_GPIO_Port,    LED_N_RED_Pin,	GPIO_PIN_RESET);
-	  HAL_GPIO_WritePin(LED_N_YEL_GPIO_Port, 	LED_N_YEL_Pin, 	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_N_GRN_GPIO_Port,  	LED_N_GRN_Pin,  GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_E_RED_GPIO_Port, LED_E_RED_Pin,	GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_E_YEL_GPIO_Port, LED_E_YEL_Pin, GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_E_GRN_GPIO_Port, LED_E_GRN_Pin, GPIO_PIN_RESET);
 
-	  HAL_GPIO_WritePin(LED_S_RED_GPIO_Port,    LED_S_RED_Pin,	GPIO_PIN_RESET);
-	  HAL_GPIO_WritePin(LED_S_YEL_GPIO_Port, 	LED_S_YEL_Pin, 	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_S_GRN_GPIO_Port,  	LED_S_GRN_Pin,  GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_W_RED_GPIO_Port, LED_W_RED_Pin,	GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_W_YEL_GPIO_Port, LED_W_YEL_Pin,	GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_W_GRN_GPIO_Port, LED_W_GRN_Pin, GPIO_PIN_RESET);
 
-	  HAL_GPIO_WritePin(LED_E_RED_GPIO_Port,    LED_E_RED_Pin,	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_E_YEL_GPIO_Port, 	LED_E_YEL_Pin, 	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_E_GRN_GPIO_Port,  	LED_E_GRN_Pin,  GPIO_PIN_RESET);
-
-	  HAL_GPIO_WritePin(LED_W_RED_GPIO_Port,    LED_W_RED_Pin,	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_W_YEL_GPIO_Port, 	LED_W_YEL_Pin,	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_W_GRN_GPIO_Port,  	LED_W_GRN_Pin,  GPIO_PIN_RESET);
-
-	  for (int t = 5; t >= 3; t--) {
-	      display7SEG(t);
-	      HAL_Delay(1000);
+		  display7SEG(10 - counter);
 	  }
+	  else if (counter >= 8 && counter <= 9) {
+		  HAL_GPIO_WritePin(LED_E_GRN_GPIO_Port, LED_E_GRN_Pin,	GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_E_YEL_GPIO_Port, LED_E_YEL_Pin, GPIO_PIN_RESET);
+		  HAL_GPIO_WritePin(LED_E_RED_GPIO_Port, LED_E_RED_Pin,	GPIO_PIN_SET);
 
-	  // NS vẫn ĐỎ — EW VÀNG 2s
-	  HAL_GPIO_WritePin(LED_E_GRN_GPIO_Port,  	LED_E_GRN_Pin,	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_E_YEL_GPIO_Port, 	LED_E_YEL_Pin, 	GPIO_PIN_RESET);
-	  HAL_GPIO_WritePin(LED_E_RED_GPIO_Port,    LED_E_RED_Pin,	GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_W_GRN_GPIO_Port, LED_W_GRN_Pin, GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LED_W_YEL_GPIO_Port, LED_W_YEL_Pin, GPIO_PIN_RESET);
+		  HAL_GPIO_WritePin(LED_W_RED_GPIO_Port, LED_W_RED_Pin,	GPIO_PIN_SET);
 
-	  HAL_GPIO_WritePin(LED_W_GRN_GPIO_Port,  	LED_W_GRN_Pin,  GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_W_YEL_GPIO_Port, 	LED_W_YEL_Pin, 	GPIO_PIN_RESET);
-	  HAL_GPIO_WritePin(LED_W_RED_GPIO_Port,    LED_W_RED_Pin,	GPIO_PIN_SET);
-
-	  for (int t = 2; t >= 1; t--) {
-	      display7SEG(t);
-	      HAL_Delay(1000);
+		  display7SEG(10 - counter);
 	  }
-
-	  HAL_GPIO_WritePin(LED_E_YEL_GPIO_Port, 	LED_E_YEL_Pin, 	GPIO_PIN_SET);
-	  HAL_GPIO_WritePin(LED_W_YEL_GPIO_Port, 	LED_W_YEL_Pin, 	GPIO_PIN_SET);
+	  counter++;
+	  if (counter >= 10) counter = 0;
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
