@@ -92,13 +92,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int counter = 0;
   while (1)
   {
-	  for (int i = 0; i < 12; i++) {
-	      clearAllClock();
-	      setNumberOnClock(i);
-	      HAL_Delay(1000);
-	  }
+	  clearAllClock();
+	  setNumberOnClock(counter);
+	  counter++;
+	  if (counter >= 12) counter = 0;
+	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
